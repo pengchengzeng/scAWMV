@@ -1,3 +1,9 @@
 # scAWMV 
+## The framework of scAWMV
 We propose scAWMV for the integrative analysis of parallel scRNA-seq data and scATAC-seq data. It takes into account both the importance of each source of multi-omic data and the link between the two datasets. scAWMV generates some biologically meaningful low dimensional representations for the transcriptomic and epigenomic profiles via unsupervised learning. 
 ![overview9](https://user-images.githubusercontent.com/55469380/169675837-d2a0a069-ea74-4e77-b1a6-44d0ff033edb.jpeg)
+Overview of scAWMV. (A) The sketch of the objective function in scAWMV, which is minimized via finding the optimal matrix factorization. It includes four components: (1) reconstruction errors by non-negative matrix factorization for the data matrices from scRNA-seq and scATAC-seq, and each factorization is assigned an adaptive weight; (2) the regularization towards a common consensus for all the cell loading matrices; (3) the constraint on the gene loading matrices obtained from the non-negative matrix factorization of the linked data, i.e. gene expression data matrix in scRNA-seq and gene activity score matrix in scATAC-seq; (4) the penalty term for the adaptive weights. (B) Based on the common latent structure from (A), scAWMV uses Louvain clustering and groups the cells in the same clusters in the heatmap of the common latent structure. (C) scAWMV ranks genes based on the gene loading matrix for scRNA-seq data from (A). For example,  genes 1-9 are labeled with the highest loadings. (D) scAWMV assigns cell type labels to cell clusters with known marker genes.
+## Requirement
+Matlab, Python3.0
+## Implementation
+Run the file "scAWMV_test.m" in the folder "code" to reproduce the resuts for example 1A. (Note that we uploaded all the smaller pre-processed data (<25 MB), but the larger datasets cannot be uploaded, and please download the datasets from the 10X Genomic site https://www.10xgenomics.com/)
